@@ -8,7 +8,7 @@
     <title>Auth X application</title>
 </head>
 <body>
-
+<button onclick="login()">Login</button>
 
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -19,7 +19,7 @@
         console.log('Session = ', authx.getSession())
     }
     const authx = AuthX("eEjFwAnbsYzUMWtWv8eJWp8hnDQdYrbkR0K2UKth", {
-        redirect_uri: "https://authxapp.herokuapp.com",
+        redirect_uri: "https://authxapp.netlify.app",
         locale: 'en',
         isSpa: false,
         onComplete: loginHandler,
@@ -32,6 +32,7 @@
         authx.initiateSession()
     }
 </script>
+
 
 </body>
 </html>
