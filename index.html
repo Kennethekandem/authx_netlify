@@ -68,9 +68,7 @@
         redirect_uri: "https://authxapp.netlify.app",
         locale: 'en',
         isSpa: false,
-        onComplete: function(response) {
-            console.log(response);
-        },
+        onComplete: loginHandler,
         onError: function (error) {
             alert(error.message)
         }
@@ -78,6 +76,8 @@
 
     function login() {
         authx.initiateSession()
+        const mode = sessionStorage.getItem('$authxcode_verifier');
+        console.log(mode); // 'dark'
     }
 </script>
 
