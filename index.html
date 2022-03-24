@@ -68,7 +68,9 @@
         redirect_uri: "https://authxapp.netlify.app",
         locale: 'en',
         isSpa: false,
-        onComplete: loginHandler,
+        onComplete: function(response) {
+            console.log(response);
+        },
         onError: function (error) {
             alert(error.message)
         }
