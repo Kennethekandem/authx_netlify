@@ -12,8 +12,8 @@
 <body>
 
 <div class="container">
-    <button class="btn btn-outline-primary" style="margin-bottom: 10px;" onclick="login()">Login</button>
-    <button class="btn btn-outline-primary" style="margin-bottom: 10px;" onclick="authx.logout()">Log Out</button>
+    <button class="btn btn-outline-primary btn-login" style="margin-bottom: 10px;" onclick="login()">Login</button>
+    <button class="btn btn-outline-primary bnt-logout" style="margin-bottom: 10px;" onclick="authx.logout()">Log Out</button>
     <div class="row">
         <div class="col-md-12">
             <div class="card card-white">
@@ -64,6 +64,14 @@
     function loginHandler (session, message) {
         console.log('logged in ', session, message)
         console.log('Session = ', authx.getSession())
+
+        if(session) {
+            $('.btn-login').hide()
+            $('.btn-logout').show()
+        } else {
+            $('.btn-logout').show()
+            $('.btn-login').hide()
+        }
     }
     const authx = AuthX("eEjFwAnbsYzUMWtWv8eJWp8hnDQdYrbkR0K2UKth", {
         redirect_uri: "https://authxapp.netlify.app",
